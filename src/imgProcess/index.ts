@@ -10,7 +10,7 @@ class ImgProcess {
     }
 
     doProcess(func:ImgProcessFunc, params) {
-        func(params,this.)
+        // func(params,this.)
     }
 }
 export {}
