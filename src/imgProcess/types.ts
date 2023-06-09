@@ -1,0 +1,1 @@
+export type ImgProcessFunc<T> = (params: T, imgData: ImageData) => ImageData
