@@ -2,8 +2,8 @@
 
 a web site for img process
 
-### init project use pnpm
+### init project use npm
 ```shell
-pnpm install
-pnpm run dev
+npm install
+npm run dev
 ```
