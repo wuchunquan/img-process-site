@@ -19,12 +19,16 @@ export default defineConfig({
                 'useNotification',
                 'useLoadingBar'
             ]
-        }, {
+        }
+        ,
+        {
             resolvers: [ElementPlusResolver()],
-        }),
+        }
+        ),
         Components({
             resolvers: [ElementPlusResolver(),NaiveUiResolver()],
-        }),],
+        }),
+    ],
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
