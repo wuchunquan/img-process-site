@@ -1,15 +1,16 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import {RouterLink, RouterView} from 'vue-router'
+import {darkTheme,zhCN, dateZhCN} from 'naive-ui'
+
 </script>
 
 <template>
-  <header>
-    <div class="bg-amber-600">
-      <el-button type="primary">点击</el-button>
-    </div>
-  </header>
+  <n-config-provider :theme="darkTheme" :locale="zhCN" :date-locale="dateZhCN">
+    <n-message-provider>
+      <RouterView/>
+    </n-message-provider>
+  </n-config-provider>
 
-  <RouterView />
 </template>
 
 <style scoped>
