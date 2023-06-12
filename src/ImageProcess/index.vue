@@ -149,6 +149,14 @@ export default defineComponent({
       let canvas = document.querySelector("#img-pro-img") as HTMLCanvasElement;
       let strDataURI = canvas.toDataURL("image/jpeg");
       let image = strDataURI.replace("image/jpeg", "image/octet-stream");
+        const a = document.createElement('a');
+        a.style.display = 'none';
+        a.setAttribute('target', '_blank');
+        a.setAttribute('download', 'img.jpg');
+        a.href = image;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
     },
     async doFunc(funcApi: FuncApi, apply = true) {
       await this.imageProcess.doFunc(funcApi, apply)
