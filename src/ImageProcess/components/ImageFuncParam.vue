@@ -85,16 +85,6 @@
         @change="change"
         v-model="param.config.value"></line-draw>
   </div>
-  <div v-else-if="param.config.type=='chooseFile'">
-    <api-file-upload
-        :allow-upload="false"
-        style="height: 100%;width: 100%" @file-select="fileSelect"
-        :allow-file-types="param.config.fileTypes"
-        ></api-file-upload>
-  </div>
-  <!-- <div v-else>
-    {{ param.name}}
-  </div> -->
 </template>
 
 <script lang="ts">
@@ -163,7 +153,7 @@ export default defineComponent({
       this.$emit('update:modelValue', this.param)
       this.$emit('change')
     },
-    fileSelect(file:UserFile){
+    fileSelect(file){
       this.param.config.value={md:file.md,url:file.file_url,fileType:file.mime_type};this.change()
     }
   },
