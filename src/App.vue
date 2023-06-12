@@ -7,7 +7,7 @@ import {darkTheme,zhCN, dateZhCN} from 'naive-ui'
 <template>
   <n-config-provider :theme="darkTheme" :locale="zhCN" :date-locale="dateZhCN">
     <n-message-provider>
-      <RouterView/>
+      <RouterView />
     </n-message-provider>
   </n-config-provider>
 

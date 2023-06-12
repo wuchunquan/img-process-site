@@ -33,7 +33,8 @@
                 <n-button size="small" class="my-1" type="info" secondary @click="undo">撤销</n-button>
               </div>
             </div>
-            <div class="text-center m-2 cursor-pointer" @click="selectedOwner = null">收起</div>
+            <div class="text-center m-2 cursor-pointer" @click="()=>{selectedOwner = null;selectedFunc=null;}">收起
+            </div>
           </div>
           <div class="img-pro__owner-select" v-if="selectedOwner">
             <div class="overflow-y-auto flex-1">
@@ -67,7 +68,7 @@
               <div class="img-pro__flow-item__name mx-2">
                 {{ flow.funcApi.name }}
               </div>
-<!--              <close-outline class="img-pro__flow-item__close"/>-->
+              <!--              <close-outline class="img-pro__flow-item__close"/>-->
             </div>
           </div>
         </div>
@@ -76,7 +77,7 @@
         <div style="width: 100%" v-show="orgImgShow" class="flex justify-center items-center">
           <img class="org-img" :src="orgImg" alt="">
         </div>
-        <canvas id="img-pro-img"  :key="imgKey" :style="{ display: orgImgShow ? 'none' : 'block' }"
+        <canvas id="img-pro-img" :key="imgKey" :style="{ display: orgImgShow ? 'none' : 'block' }"
                 @mousemove="(e)=>imageProcess&&pointSelect(e)">
         </canvas>
         <div class="img-cut" v-if="imgCutBox.show"
@@ -142,7 +143,7 @@ export default defineComponent({
       const x = e.offsetX / (e.target as HTMLCanvasElement).offsetWidth
       const y = e.offsetY / (e.target as HTMLCanvasElement).offsetHeight
       const pointData = this.imageProcess.getPointData(x, y)
-      pointData&&this.setImagePoint(pointData)
+      pointData && this.setImagePoint(pointData)
     },
     savePic() {
       let canvas = document.querySelector("#img-pro-img") as HTMLCanvasElement;
