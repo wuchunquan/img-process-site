@@ -314,7 +314,7 @@ export default defineComponent({
   color: #ffffffa3;
   /*border-bottom: 1px solid #929292;*/
   cursor: pointer;
-  min-width: 9rem;
+  min-width: 9.1rem;
   @apply py-1.5
   /*border: 2px solid #878786;*/
   /*display: flex;*/
