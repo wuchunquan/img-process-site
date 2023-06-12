@@ -14,6 +14,7 @@ export default defineConfig({
     build:{
         outDir:"docs"
     },
+    base:"/img-process-site",
     plugins: [vue(), vueJsx(), AutoImport('vue',
         {
             'naive-ui': [
