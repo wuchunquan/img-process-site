@@ -11,6 +11,9 @@ import {ElementPlusResolver,NaiveUiResolver} from 'unplugin-vue-components/resol
 
 // https://vitejs.dev/config/
 export default defineConfig({
+    build:{
+        outDir:"docs"
+    },
     plugins: [vue(), vueJsx(), AutoImport('vue',
         {
             'naive-ui': [
