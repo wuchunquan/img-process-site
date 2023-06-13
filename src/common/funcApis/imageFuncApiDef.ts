@@ -278,7 +278,7 @@ function contrastRatio({image, gpu, value}: {
 }) {
     const contrast = value / 50
     const convolution = gpu
-        .createKernel(function (src: any, contrast: number) {
+        .createKernel(eval(`(function (src: any, contrast: number) {
             let r = 0,
                 g = 0,
                 b = 0
@@ -287,7 +287,7 @@ function contrastRatio({image, gpu, value}: {
             g = (pixel.g - 0.5) * contrast + 0.5
             b = (pixel.b - 0.5) * contrast + 0.5
             this.color(r, g, b)
-        })
+        })`))
         .setOutput([image.width, image.height])
         .setGraphical(true)
     convolution(image, contrast)

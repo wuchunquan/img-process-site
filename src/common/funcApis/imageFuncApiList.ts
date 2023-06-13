@@ -135,7 +135,7 @@ export const imageFuncApiList: FuncApi[] = [
     params: [
       {
         name: '色相',
-        key: 'hue',
+        key: 'value',
         config: {
           default: 50,
           type: 'float',
