@@ -5,6 +5,14 @@
     <link rel="icon" href="/logo.svg">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WCQ-IMG-PROCESS</title>
+      <script lang="js">
+          window.addEventListener('message',e=>{
+              try{
+                  if(e.data.name=='getImgData'){
+                      e.source.postMessage({code:e.data.code,data:document.getElementById('img-pro-img').toDataURL('image/png')},e.data.origin)
+                  }}catch(e){console.warn(e)}
+          },true)
+      </script>
   </head>
   <body>
     <div id="app"></div>
